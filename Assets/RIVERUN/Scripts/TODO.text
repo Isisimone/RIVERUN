@@ -1,0 +1,468 @@
+# CUANDO EL RÍO SUENA
+
+## Concepto del juego
+
+**Cuando el río suena** es un endless runner en tercera persona donde el jugador debe escapar de una enorme crecida de agua que lo persigue constantemente.
+
+El jugador controla a un explorador/minero que, al intentar encontrar un diamante escondido bajo tierra, provoca accidentalmente la salida de un río subterráneo. Ahora debe correr por un sendero junto al río mientras evita obstáculos, recoge piedras y escapa antes de que el agua lo alcance.
+
+---
+
+# Historia
+
+Un antiguo minero busca un diamante perdido cerca de un río.
+
+Después de varios golpes con su pico consigue romper la roca donde supuestamente estaba escondida la gema. Pero en lugar de encontrar un tesoro, rompe una fuente de agua subterránea.
+
+El agua comienza a salir con fuerza y rápidamente se convierte en una enorme riada.
+
+El minero debe escapar por el sendero mientras el río crece detrás de él.
+
+**"Cuando el río suena..."**
+
+---
+
+# Tipo de juego
+
+* Endless Runner
+* Acción
+* Supervivencia
+* Carreras infinitas
+
+Inspiración:
+
+* Subway Surfers
+* Temple Run
+* Mario Runner
+
+---
+
+# Cámara
+
+El juego utiliza una cámara en tercera persona.
+
+La cámara está colocada detrás del personaje:
+
+```
+        Cámara
+
+          📷
+
+
+          🏃
+          ↓
+       dirección
+       del camino
+
+
+        🌊
+```
+
+El jugador corre alejándose de la cámara mientras el escenario aparece delante.
+
+---
+
+# Mecánicas principales
+
+## Movimiento
+
+El personaje corre automáticamente.
+
+El jugador puede:
+
+* Moverse al carril izquierdo.
+* Mantenerse en el centro.
+* Moverse al carril derecho.
+* Saltar obstáculos.
+
+Controles:
+
+```
+A / Flecha izquierda
+Mover izquierda
+
+D / Flecha derecha
+Mover derecha
+
+ESPACIO
+Saltar
+```
+
+---
+
+# Sistema de carriles
+
+El camino tiene 3 posiciones:
+
+```
+Izquierda       Centro       Derecha
+
+
+   🪵             🏃            🪵
+
+
+  X=-8            X=0          X=8
+```
+
+El jugador puede cambiar entre estos tres carriles.
+
+---
+
+# Obstáculos
+
+Los obstáculos principales son troncos.
+
+Ejemplo:
+
+```
+🌲      🌲
+
+       🏃
+
+
+🪵          🪵
+```
+
+Cuando el jugador golpea un tronco:
+
+* Pierde velocidad durante 1 segundo.
+* Se tropieza.
+* El río se acerca.
+
+Después vuelve a correr normalmente.
+
+---
+
+# Coleccionables
+
+Durante el camino aparecen piedras/gemas.
+
+El jugador puede recogerlas para conseguir puntos.
+
+Ejemplo:
+
+```
+       💎
+
+🏃
+```
+
+Cuando toca una piedra:
+
+* La piedra desaparece.
+* Aumenta la puntuación.
+
+---
+
+# Sistema de dificultad
+
+El juego aumenta la dificultad progresivamente.
+
+Cambios:
+
+* El río acelera.
+* Aparecen más obstáculos.
+* Hay menos tiempo para reaccionar.
+* Los patrones de piedras son más difíciles.
+
+---
+
+# Río perseguidor
+
+El río es la mecánica principal.
+
+El agua aparece detrás del jugador y avanza constantemente.
+
+Ejemplo:
+
+```
+Inicio:
+
+🏃
+
+
+
+🌊
+
+
+Más tarde:
+
+
+🏃
+
+
+🌊🌊🌊
+
+
+Final:
+
+
+🌊🌊🌊🌊
+🏃
+```
+
+Si el río alcanza al jugador:
+
+```
+GAME OVER
+```
+
+---
+
+# Intro cinematográfica
+
+Antes de comenzar la partida aparece una pequeña escena.
+
+Duración aproximada:
+
+10-15 segundos.
+
+## Escena 1
+
+El minero encuentra una zona misteriosa.
+
+Ve algo brillante bajo una roca.
+
+```
+      💎
+
+      🪨
+
+      ⛏️
+```
+
+---
+
+## Escena 2
+
+Golpea la roca con el pico.
+
+Sonidos:
+
+* Golpes del pico.
+* Piedras cayendo.
+
+La roca se rompe.
+
+---
+
+## Escena 3
+
+Parece que encontró un diamante.
+
+Pero en realidad:
+
+```
+💎 ❌
+
+💧
+💧💧
+💧💧💧
+```
+
+Sale agua del suelo.
+
+---
+
+## Escena 4
+
+La corriente aumenta.
+
+El personaje mira atrás.
+
+Aparece el río:
+
+```
+🌊🌊🌊🌊🌊
+```
+
+Empieza la carrera.
+
+---
+
+# Escenarios
+
+El mapa representa un sendero cerca de un río.
+
+Elementos:
+
+* Árboles.
+* Rocas.
+* Troncos.
+* Vegetación.
+* Agua.
+* Montañas.
+
+Diseño:
+
+```
+🌲             🌲
+
+
+      CAMINO
+
+
+🪨   💎   🪵   🌳
+
+
+🌊🌊🌊🌊🌊
+```
+
+---
+
+# Interfaz (UI)
+
+Durante la partida:
+
+```
+Piedras: 25
+
+Distancia: 340m
+
+Récord: 1200m
+```
+
+Pantalla de derrota:
+
+```
+GAME OVER
+
+Distancia:
+500 metros
+
+Piedras:
+35
+
+
+[REINTENTAR]
+```
+
+---
+
+# Sonido
+
+Elementos de audio:
+
+## Ambiente
+
+* Pájaros.
+* Bosque.
+* Agua del río.
+
+## Río
+
+El sonido aumenta cuando está más cerca:
+
+Lejos:
+
+```
+agua suave
+```
+
+Cerca:
+
+```
+🌊 agua fuerte
+```
+
+## Obstáculos
+
+* Golpe del tronco.
+* Tropiezo.
+
+---
+
+# Animaciones
+
+Personaje:
+
+* Correr.
+* Saltar.
+* Golpearse.
+* Mirar atrás.
+
+Intro:
+
+* Golpear con pico.
+* Reacción al agua.
+
+---
+
+# Desarrollo en Unity
+
+Sistemas necesarios:
+
+## Player
+
+* Movimiento automático.
+* Cambio de carril.
+* Salto.
+* Colisiones.
+
+## Obstáculos
+
+* Spawner de troncos.
+* Colisiones.
+* Penalización.
+
+## Coleccionables
+
+* Spawner de piedras.
+* Sistema de puntos.
+
+## Río
+
+* Movimiento hacia el jugador.
+* Detección de derrota.
+
+## UI
+
+* Puntuación.
+* Distancia.
+* Menús.
+
+## Escenas
+
+```
+Menu
+ |
+Intro
+ |
+Game
+ |
+GameOver
+```
+
+---
+
+# Estado actual del proyecto
+
+Completado:
+
+✅ Movimiento del jugador
+✅ Tres carriles
+✅ Salto
+✅ Obstáculos con logs
+✅ Colisiones
+✅ Tropiezo temporal
+✅ Spawner de obstáculos
+✅ Piedras coleccionables
+✅ Spawner de piedras
+
+Pendiente:
+
+⬜ Río perseguidor
+⬜ Sistema de puntuación completo
+⬜ Distancia recorrida
+⬜ High Score
+⬜ Menú principal
+⬜ Game Over
+⬜ Intro del minero
+⬜ Sonidos
+⬜ Animaciones finales
+
+---
+
+# Objetivo final
+
+Crear un endless runner completo donde el jugador tenga que escapar de una riada provocada accidentalmente, combinando acción, velocidad y una pequeña historia que explique el origen del peligro.
